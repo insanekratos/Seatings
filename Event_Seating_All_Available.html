@@ -1,0 +1,231 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Seating</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; }
+        .table { display: inline-block; margin: 20px; }
+        .seat { width: 40px; height: 40px; margin: 5px; background-color: green; display: inline-block; border-radius: 5px; cursor: pointer; }
+        .reserved { background-color: red; cursor: not-allowed; }
+    </style>
+</head>
+<body>
+    <h1>Pick Your Seat</h1>
+    <div id="table-1" class="table">
+        <h2>Table 1</h2>
+        <div class="seat" data-seat="1-1"></div>
+        <div class="seat" data-seat="1-2"></div>
+        <div class="seat" data-seat="1-3"></div>
+        <div class="seat" data-seat="1-4"></div>
+        <div class="seat" data-seat="1-5"></div>
+        <div class="seat" data-seat="1-6"></div>
+        <div class="seat" data-seat="1-7"></div>
+        <div class="seat" data-seat="1-8"></div>
+    </div>
+	<div id="table-2" class="table">
+        <h2>Table 2</h2>
+        <div class="seat" data-seat="2-1"></div>
+        <div class="seat" data-seat="2-2"></div>
+        <div class="seat" data-seat="2-3"></div>
+        <div class="seat" data-seat="2-4"></div>
+        <div class="seat" data-seat="2-5"></div>
+        <div class="seat" data-seat="2-6"></div>
+        <div class="seat" data-seat="2-7"></div>
+        <div class="seat" data-seat="2-8"></div>
+    </div>
+<div id="table-3" class="table">
+        <h2>Table 3</h2>
+        <div class="seat" data-seat="3-1"></div>
+        <div class="seat" data-seat="3-2"></div>
+        <div class="seat" data-seat="3-3"></div>
+        <div class="seat" data-seat="3-4"></div>
+        <div class="seat" data-seat="3-5"></div>
+        <div class="seat" data-seat="3-6"></div>
+        <div class="seat" data-seat="3-7"></div>
+        <div class="seat" data-seat="3-8"></div>
+    </div>
+<div id="table-4" class="table">
+        <h2>Table 4</h2>
+        <div class="seat" data-seat="4-1"></div>
+        <div class="seat" data-seat="4-2"></div>
+        <div class="seat" data-seat="4-3"></div>
+        <div class="seat" data-seat="4-4"></div>
+        <div class="seat" data-seat="4-5"></div>
+        <div class="seat" data-seat="4-6"></div>
+        <div class="seat" data-seat="4-7"></div>
+        <div class="seat" data-seat="4-8"></div>
+    </div>
+<div id="table-5" class="table">
+        <h2>Table 5</h2>
+        <div class="seat" data-seat="5-1"></div>
+        <div class="seat" data-seat="5-2"></div>
+        <div class="seat" data-seat="5-3"></div>
+        <div class="seat" data-seat="5-4"></div>
+        <div class="seat" data-seat="5-5"></div>
+        <div class="seat" data-seat="5-6"></div>
+        <div class="seat" data-seat="5-7"></div>
+        <div class="seat" data-seat="5-8"></div>
+    </div>
+<div id="table-6" class="table">
+        <h2>Table 6</h2>
+        <div class="seat" data-seat="6-1"></div>
+        <div class="seat" data-seat="6-2"></div>
+        <div class="seat" data-seat="6-3"></div>
+        <div class="seat" data-seat="6-4"></div>
+        <div class="seat" data-seat="6-5"></div>
+        <div class="seat" data-seat="6-6"></div>
+        <div class="seat" data-seat="6-7"></div>
+        <div class="seat" data-seat="6-8"></div>
+    </div>
+<div id="table-7" class="table">
+        <h2>Table 7</h2>
+        <div class="seat" data-seat="7-1"></div>
+        <div class="seat" data-seat="7-2"></div>
+        <div class="seat" data-seat="7-3"></div>
+        <div class="seat" data-seat="7-4"></div>
+        <div class="seat" data-seat="7-5"></div>
+        <div class="seat" data-seat="7-6"></div>
+        <div class="seat" data-seat="7-7"></div>
+        <div class="seat" data-seat="7-8"></div>
+    </div>
+<div id="table-8" class="table">
+        <h2>Table 8</h2>
+        <div class="seat" data-seat="8-1"></div>
+        <div class="seat" data-seat="8-2"></div>
+        <div class="seat" data-seat="8-3"></div>
+        <div class="seat" data-seat="8-4"></div>
+        <div class="seat" data-seat="8-5"></div>
+        <div class="seat" data-seat="8-6"></div>
+        <div class="seat" data-seat="8-7"></div>
+        <div class="seat" data-seat="8-8"></div>
+    </div>
+<div id="table-9" class="table">
+        <h2>Table 9</h2>
+        <div class="seat" data-seat="9-1"></div>
+        <div class="seat" data-seat="9-2"></div>
+        <div class="seat" data-seat="9-3"></div>
+        <div class="seat" data-seat="9-4"></div>
+        <div class="seat" data-seat="9-5"></div>
+        <div class="seat" data-seat="9-6"></div>
+        <div class="seat" data-seat="9-7"></div>
+        <div class="seat" data-seat="9-8"></div>
+    </div>
+<div id="table-10" class="table">
+        <h2>Table 10</h2>
+        <div class="seat" data-seat="10-1"></div>
+        <div class="seat" data-seat="10-2"></div>
+        <div class="seat" data-seat="10-3"></div>
+        <div class="seat" data-seat="10-4"></div>
+        <div class="seat" data-seat="10-5"></div>
+        <div class="seat" data-seat="10-6"></div>
+        <div class="seat" data-seat="10-7"></div>
+        <div class="seat" data-seat="10-8"></div>
+    </div>
+<div id="table-12" class="table">
+        <h2>Table 12</h2>
+        <div class="seat" data-seat="12-1"></div>
+        <div class="seat" data-seat="12-2"></div>
+        <div class="seat" data-seat="12-3"></div>
+        <div class="seat" data-seat="12-4"></div>
+        <div class="seat" data-seat="12-5"></div>
+        <div class="seat" data-seat="12-6"></div>
+        <div class="seat" data-seat="12-7"></div>
+        <div class="seat" data-seat="12-8"></div>
+    </div>
+<div id="table-13" class="table">
+        <h2>Table 13</h2>
+        <div class="seat" data-seat="13-1"></div>
+        <div class="seat" data-seat="13-2"></div>
+        <div class="seat" data-seat="13-3"></div>
+        <div class="seat" data-seat="13-4"></div>
+        <div class="seat" data-seat="13-5"></div>
+        <div class="seat" data-seat="13-6"></div>
+        <div class="seat" data-seat="13-7"></div>
+        <div class="seat" data-seat="13-8"></div>
+    </div>
+<div id="table-14" class="table">
+        <h2>Table 14</h2>
+        <div class="seat" data-seat="14-1"></div>
+        <div class="seat" data-seat="14-2"></div>
+        <div class="seat" data-seat="14-3"></div>
+        <div class="seat" data-seat="14-4"></div>
+        <div class="seat" data-seat="14-5"></div>
+        <div class="seat" data-seat="14-6"></div>
+        <div class="seat" data-seat="14-7"></div>
+        <div class="seat" data-seat="14-8"></div>
+    </div>
+<div id="table-15" class="table">
+        <h2>Table 15</h2>
+        <div class="seat" data-seat="15-1"></div>
+        <div class="seat" data-seat="15-2"></div>
+        <div class="seat" data-seat="15-3"></div>
+        <div class="seat" data-seat="15-4"></div>
+        <div class="seat" data-seat="15-5"></div>
+        <div class="seat" data-seat="15-6"></div>
+        <div class="seat" data-seat="15-7"></div>
+        <div class="seat" data-seat="15-8"></div>
+    </div>
+<div id="table-16" class="table">
+        <h2>Table 16</h2>
+        <div class="seat" data-seat="16-1"></div>
+        <div class="seat" data-seat="16-2"></div>
+        <div class="seat" data-seat="16-3"></div>
+        <div class="seat" data-seat="16-4"></div>
+        <div class="seat" data-seat="16-5"></div>
+        <div class="seat" data-seat="16-6"></div>
+        <div class="seat" data-seat="16-7"></div>
+        <div class="seat" data-seat="16-8"></div>
+    </div>
+<div id="table-17" class="table">
+        <h2>Table 17</h2>
+        <div class="seat" data-seat="17-1"></div>
+        <div class="seat" data-seat="17-2"></div>
+        <div class="seat" data-seat="17-3"></div>
+        <div class="seat" data-seat="17-4"></div>
+        <div class="seat" data-seat="17-5"></div>
+        <div class="seat" data-seat="17-6"></div>
+        <div class="seat" data-seat="17-7"></div>
+        <div class="seat" data-seat="17-8"></div>
+    </div>
+<div id="table-18" class="table">
+        <h2>Table 18</h2>
+        <div class="seat" data-seat="18-1"></div>
+        <div class="seat" data-seat="18-2"></div>
+        <div class="seat" data-seat="18-3"></div>
+        <div class="seat" data-seat="18-4"></div>
+        <div class="seat" data-seat="18-5"></div>
+        <div class="seat" data-seat="18-6"></div>
+        <div class="seat" data-seat="18-7"></div>
+        <div class="seat" data-seat="18-8"></div>
+    </div>
+<div id="table-19" class="table">
+        <h2>Table 19</h2>
+        <div class="seat" data-seat="19-1"></div>
+        <div class="seat" data-seat="19-2"></div>
+        <div class="seat" data-seat="19-3"></div>
+        <div class="seat" data-seat="19-4"></div>
+        <div class="seat" data-seat="19-5"></div>
+        <div class="seat" data-seat="19-6"></div>
+        <div class="seat" data-seat="19-7"></div>
+        <div class="seat" data-seat="19-8"></div>
+    </div>
+
+
+    <script>
+        const seats = document.querySelectorAll('.seat');
+        seats.forEach(seat => {
+            seat.addEventListener('click', () => {
+                if (!seat.classList.contains('reserved')) {
+                    alert(`You reserved seat ${seat.dataset.seat}`);
+                    seat.classList.add('reserved');
+                } else {
+                    alert('This seat is already reserved.');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
