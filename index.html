@@ -213,41 +213,48 @@
         <div class="seat" data-seat="19-7"></div>
         <div class="seat" data-seat="19-8"></div>
     </div>
-    <script>
-	   const firebaseConfig = {
+  <script>
+    // Firebase Configuration
+    const firebaseConfig = {
+        apiKey: "AIzaSyAL2E5ns83yHilsFSf4KGSpsih0eIopDgo",
+        authDomain: "seatings-9c48f.firebaseapp.com",
+        projectId: "seatings-9c48f",
+        storageBucket: "seatings-9c48f.appspot.com",
+        messagingSenderId: "144157466800",
+        appId: "1:144157466800:web:7deea198be2c49d03c5b75"
+    };
 
-    apiKey: "AIzaSyAL2E5ns83yHilsFSf4KGSpsih0eIopDgo",
+    // Initialize Firebase
+    const app = firebase.initializeApp(firebaseConfig);
+    const db = firebase.firestore();
+    console.log("Firebase initialized!");
 
-    authDomain: "seatings-9c48f.firebaseapp.com",
+    // Seat reservation logic
+    const seats = document.querySelectorAll('.seat');
+    seats.forEach(seat => {
+        seat.addEventListener('click', async () => {
+            const seatId = seat.dataset.seat; // Get seat ID from data-seat attribute
+            const seatRef = db.collection('seats').doc(seatId);
 
-    projectId: "seatings-9c48f",
+            try {
+                const doc = await seatRef.get(); // Check seat status in Firestore
 
-    storageBucket: "seatings-9c48f.firebasestorage.app",
-
-    messagingSenderId: "144157466800",
-
-    appId: "1:144157466800:web:7deea198be2c49d03c5b75"
-
-  };
-
-		
-	const app = firebase.initializeApp(firebaseConfig);
-    	const db = firebase.firestore();
-	console.log("Firebase initialized!");
-		
-        const seats = document.querySelectorAll('.seat');
-        seats.forEach(seat => {
-            seat.addEventListener('click', () => {
-                if (!seat.classList.contains('reserved')) {
-                    alert(`You reserved seat ${seat.dataset.seat}`);
-                    seat.classList.add('reserved');
+                if (!doc.exists || !doc.data().reserved) {
+                    // Reserve the seat in Firestore
+                    await seatRef.set({ reserved: true });
+                    alert(`You reserved seat ${seatId}`);
+                    seat.classList.add('reserved'); // Change seat appearance to reserved
                 } else {
                     alert('This seat is already reserved.');
                 }
-            });
+            } catch (error) {
+                console.error("Error reserving seat:", error);
+            }
         });
+    });
 
-	    db.collection('seats').onSnapshot(snapshot => {
+    // Real-time updates for seat reservations
+    db.collection('seats').onSnapshot(snapshot => {
         snapshot.docs.forEach(doc => {
             const seat = document.querySelector(`[data-seat="${doc.id}"]`);
             if (seat && doc.data().reserved) {
@@ -255,6 +262,6 @@
             }
         });
     });
-    </script>
+</script>
 </body>
 </html>
